@@ -1,0 +1,76 @@
+body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Mencegah scroll saat tombol lari-lari */
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+.image-center img {
+    height: 250px; /* Ukuran pas untuk mobile */
+    width: auto;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.text-wrapper {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    margin: 0;
+    width: 100%;
+}
+
+.button-area {
+    margin-top: 20px;
+    position: relative;
+    height: 60px;
+}
+
+.next, .btn-choice {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.next { background-color: #ff9800; color: white; }
+
+#option-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#btn-yes { background-color: #4CAF50; color: white; }
+
+#btn-no { 
+    background-color: #f44336; 
+    color: white;
+    position: absolute; /* Penting agar bisa pindah-pindah */
+}
