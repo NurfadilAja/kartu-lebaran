@@ -30,14 +30,29 @@ Iya.addEventListener("click", function () {
     } else if (Iya.value == 4) {
         Text.innerHTML = "Di hari yang fitri ini, saya ingin memohon maaf lahir dan batin atas perbuatan saya yang salah, baik yang disengaja maupun tidak disengaja";
         Image.setAttribute("src", "perkenalan.png");
-        Iya.style.display = "none"; // Sembunyikan tombol Next
-        optionButtons.style.display = "flex"; // Munculkan pilihan Iya/Nggak
+        
+        // Sembunyikan tombol Nextt
+        Iya.style.display = "none"; 
+        
+        // Atur posisi awal tombol "Nggak Mau" agar tidak menumpuk di bawah
+        // Kita letakkan di area atas layar (20% dari atas)
+        btnNo.style.position = "fixed";
+        btnNo.style.top = "20%"; 
+        btnNo.style.left = "50%";
+        btnNo.style.transform = "translateX(-50%)"; // Agar tepat di tengah horizontal
+        
+        // Tampilkan kontainer tombol pilihan
+        optionButtons.style.display = "flex"; 
     }
     
     Text.classList.add('text-animate');
 });
 
 function lari() {
+    // Menghilangkan transform center agar koordinat X dan Y akurat saat lari
+    btnNo.style.transform = "none";
+    
+    // Menghitung posisi acak baru
     const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 50);
     const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 50);
     
